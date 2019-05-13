@@ -10,8 +10,14 @@
 if ! test -e ${TASKDDATA}/config; then
 
   # Create directories for log and certs
-  mkdir -p ${TASKDDATA}/log ${TASKDDATA}/pki
-
+  mkdir -p ${TASKDDATA}/log ${TASKDDATA}/pki ${TASKDDATA}/bugwarrior
+  # Create bugwarrior config file
+  cat <<EOF >> ${TASKDDATA}/bugwarrior/bugwarriorrc
+[general]
+targets=
+taskrc=${TASKDDATA}/config
+EOF
+  
   # Init taskd and configure log
   taskd init
   taskd config --force log ${TASKDDATA}/log/taskd.log
