@@ -1,4 +1,4 @@
-# Taskwarrior Server (taskd) Docker
+# Taskwarrior Server (taskd) Docker with BugWarrior + Jira
 
 (c) 2015-2016 Óscar García Amor
 Redistribution, modifications and pull requests are welcomed under the terms
